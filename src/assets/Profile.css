@@ -139,7 +139,7 @@ body {
 }
 
 /* Logout Button - Positioned at Top Right */
-.logout-button {
+#logout-button {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -154,16 +154,16 @@ body {
     transition: background-color 0.3s, transform 0.3s ease;
 }
 
-.logout-button:hover {
+#logout-button:hover {
     background-color: #c82333;
     transform: translateY(-2px);
 }
 
-.logout-button:active {
+#logout-button:active {
     transform: translateY(0);
 }
 
-.logout-button:focus {
+#logout-button:focus {
     outline: none;
 }
 
@@ -178,4 +178,10 @@ body {
 .flex-profile-btn{
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    #logout-button{
+        width: auto;
+    }
 }

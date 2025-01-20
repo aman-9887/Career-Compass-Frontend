@@ -21,7 +21,7 @@ const Profile = () => {
     <div className="profile-page-container">
       {user ? (
         <div className="profile-card">
-          <button className="logout-button" onClick={handleLogout}>Logout</button> {/* Logout Button */}
+          <button id="logout-button" onClick={handleLogout}>Logout</button> {/* Logout Button */}
 
           <div className="profile-header">
             <img

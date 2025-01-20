@@ -151,6 +151,7 @@ const Question = () => {
                 <CareerCard
                   key={careerOption.id}
                   id={careerOption.id}
+                  _id={careerOption._id}
                   title={careerOption.title}
                   description={careerOption.description}
                   image={careerOption.image}
