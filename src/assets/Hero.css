@@ -1,0 +1,424 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  background-size: cover;  /* Ensures the image covers the section without overflow */
+  background-position: center center; /* Centers the image properly */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  /* width: 100%; */
+  overflow: hidden;  /* Prevents the image from overflowing */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("https://t3.ftcdn.net/jpg/00/63/76/50/360_F_63765021_kYULN6THZJrimIHaWEIJe2z659pKep6E.jpg"); /* Replace with your static image URL */
+  background-attachment: fixed;  /* Keeps the background fixed while scrolling */
+  background-blur: 5px;
+  animation: backgroundAnim 26s ease-in-out infinite; /* Animated background */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  max-width: 850px;
+  padding: 50px 40px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text clarity */
+  border-radius: 15px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Hero Heading Styling */
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #f8f8f8;
+  line-height: 1.3;
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero Paragraph Styling */
+.hero p {
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === removing default button style ===*/
+.cta-button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.cta-button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #f1d524;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.cta-button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+/* Hero Content Fade-In Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background Animation */
+@keyframes backgroundAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Features Section */
+.features {
+  background-color: #f2f2f2;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.features h2 {
+  font-size: 3.2rem;
+  color: #333;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between the feature cards */
+}
+
+.feature-card {
+  background-color: #fff;
+  padding: 30px;
+  width: 22%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.feature-card p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1400px) {
+  .hero{
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+.hero{
+  width: 100%;
+}
+
+  .feature-cards {
+    justify-content: center; /* Center the feature cards on smaller devices */
+  }
+
+  .feature-card {
+    width: 45%; /* Adjust width for tablets */
+    margin-bottom: 20px;
+  }
+
+  .features h2 {
+    font-size: 2.5rem; /* Adjust heading size */
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+  .feature-cards {
+    flex-direction: column; /* Stack the feature cards vertically */
+    align-items: center; /* Center the feature cards */
+  }
+
+  .feature-card {
+    width: 90%; /* Adjust width for mobile */
+    margin-bottom: 20px;
+  }
+
+  .features h2 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .feature-card h3 {
+    font-size: 1.8rem; /* Adjust title size */
+  }
+
+  .feature-card p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+}
+
+/* How It Works Section */
+.how-it-works {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.how-it-works h2 {
+  font-size: 3.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.section-description {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between the steps */
+}
+
+.step {
+  background-color: #fff;
+  padding: 30px;
+  width: 28%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.step h3 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.step p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+  .steps {
+    justify-content: center; /* Center the steps on smaller devices */
+  }
+
+  .step {
+    width: 45%; /* Adjust width for tablets */
+    margin-bottom: 20px;
+  }
+
+  .section-description {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+  .steps {
+    flex-direction: column; /* Stack the steps vertically */
+    align-items: center; /* Center the steps on mobile */
+  }
+
+  .step {
+    width: 90%; /* Adjust width for mobile */
+    margin-bottom: 20px;
+  }
+
+  .section-description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Explore Careers Section */
+.explore-careers {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.explore-careers h2 {
+  font-size: 3.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.section-description {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+.career-categories {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between the career categories */
+}
+
+.category {
+  background-color: #fff;
+  padding: 30px;
+  width: 28%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category h3 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.category p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.category ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: #555;
+}
+
+.category ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.category ul li strong {
+  font-weight: 600;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+  .category {
+    width: 45%;
+  }
+
+  .section-description {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+  .category {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .section-description {
+    font-size: 1.2rem;
+  }
+}

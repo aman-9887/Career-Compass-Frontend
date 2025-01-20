@@ -1,0 +1,193 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Increased padding for a more spacious navbar */
+  background-color: #1a1a1a; /* Dark background to match footer */
+  color: white;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow for a floating effect */
+  transition: all 0.3s ease;
+}
+
+/* Navbar Logo Styles */
+.navbar .logo {
+  font-size: 2rem; /* Slightly larger logo for emphasis */
+  font-weight: 700; /* Bolder text for logo */
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 1px;
+  color: #ffcc00; /* Bright accent color for logo */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: #fff; /* Hover effect on logo */
+}
+
+/* Navbar Link Container */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px; /* Increased gap for more spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Link Styling */
+.navbar .nav-links li {
+  /* position: relative; */
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem; /* Slightly larger font for better readability */
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 30px; /* Rounded corners for a soft, modern look */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links .hover:hover {
+  background-color: #0048ff; /* Blue background on hover */
+  color: #fff;
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.avatar-navbar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Authentication Links */
+.navbar .auth-link {
+  background-color: transparent;
+  /* border: 1px solid #fff; */
+  border: none;
+  padding: 7px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* .navbar .auth-link:hover {
+  background-color: #fff;
+  color: #007bff;
+} */
+
+.navbar .signup-link {
+  background-color: #ffcc00;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar .signup-link:hover {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+/* Mobile Styles */
+.navbar .menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  z-index: 1010; /* Ensure it's above other elements */
+}
+
+.navbar .menu-toggle div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.3s ease;
+}
+
+/* Toggle lines animation when the menu is open */
+.navbar .menu-toggle.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* First line transforms to top-right */
+}
+
+.navbar .menu-toggle.open div:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.navbar .menu-toggle.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Third line transforms to bottom-right */
+}
+
+/* Mobile Menu */
+@media (max-width: 1400px) {
+  .navbar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 956px) {
+  .navbar .menu-toggle {
+    display: block; /* Show hamburger menu on smaller screens */
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a; /* Darker background to match navbar */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .navbar .nav-links.open {
+    display: flex;
+  }
+
+  .navbar .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar .nav-links a {
+    font-size: 1.3rem;
+    padding: 12px 20px;
+  }
+
+  /* Adjusting avatar size in mobile */
+  .navbar .avatar-navbar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .nav-links a {
+    font-size: 1.1rem; /* Slightly smaller font for mobile screens */
+  }
+
+  .navbar .nav-links li {
+    margin: 15px 0; /* More space between mobile menu items */
+  }
+
+  .navbar .avatar-navbar {
+    width: 25px;
+    height: 25px; /* Smaller avatar size */
+  }
+}

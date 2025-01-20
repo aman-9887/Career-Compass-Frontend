@@ -1,0 +1,15 @@
+.remove-favorite-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-favorite-button:hover {
+    background-color: #c82333;
+  }
+  
