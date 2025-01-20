@@ -180,8 +180,54 @@ body {
     justify-content: space-between;
 }
 
+@media (max-width: 950px) {
+    .profile-page-container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 820px) {
+    .profile-page-container {
+        max-width: 700px;
+    }
+}
+
 @media (max-width: 768px) {
     #logout-button{
         width: auto;
+    }
+
+    .profile-page-container {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 620px) {
+    .profile-page-container {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 520px) {
+    .profile-page-container {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 420px) {
+    .profile-page-container {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .profile-page-container {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 220px) {
+    .profile-page-container {
+        max-width: 100px;
     }
 }
